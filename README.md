@@ -1,11 +1,7 @@
-# Sorting
-
-This script sorts files into four extension types using Node.js. Clone the repository and run the script to see an example of how the script works with the "Example" directory.
-
 ```bash
 
 # install dependencies
 $ yarn install
 
-# start executing
+# start with hot reload at localhost:3001
 $ yarn start
