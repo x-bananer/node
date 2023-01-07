@@ -1,5 +1,7 @@
+```bash
+
 # install dependencies
 $ yarn install
 
-#start executing
+# start executing
 $ yarn start
