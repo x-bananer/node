@@ -13,7 +13,6 @@ const config = {
 }
 
 const directory = process.argv[2];
-console.log(process)
 
 if (!directory) {
     console.log("Specify the target directory");
@@ -22,9 +21,7 @@ if (!directory) {
 
 [...config.typeDirs, { directory: "other" }].map(d => {
     const dirname = `${directory}/${d.directory}`;
-    if (!fs.existsSync(dirname)) {
-        fs.mkdirSync(dirname);
-    }
+    if (!fs.existsSync(dirname)) fs.mkdirSync(dirname);
 });
 
 (async () => {
@@ -33,9 +30,7 @@ if (!directory) {
     files.forEach(file => {
         const extname = path.extname(file);
 
-        if (!extname) {
-            return;
-        }
+        if (!extname) return;
 
         const { directory: targetDir = "other" } = config.typeDirs.find(dir => dir.type === extname) || {};
 
